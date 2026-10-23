@@ -1,15 +1,15 @@
-#  Sistema de Manutenção de Contas Bancárias
+# Sistema de Manutenção de Contas Bancárias
+
+<!-- badges -->
+![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=white) ![GCC](https://img.shields.io/badge/GCC-A42E2B?style=flat-square&logo=gnu&logoColor=white) ![Make](https://img.shields.io/badge/Make-427819?style=flat-square&logo=gnu&logoColor=white)
+
+[Read in English](README.en.md)
 
 > Projeto acadêmico desenvolvido em **C11** com arquitetura modular em camadas, operações de arquivo binário e padrão de organização inspirado em princípios CRUD/enterprise.
 
-![Language](https://img.shields.io/badge/Linguagem-C11-blue?style=flat-square&logo=c)
-![Standard](https://img.shields.io/badge/Padrão-ISO%2FIEC%209899%3A2011-lightgrey?style=flat-square)
-![Build](https://img.shields.io/badge/Build-Makefile-green?style=flat-square)
-![License](https://img.shields.io/badge/Licença-Acadêmico-orange?style=flat-square)
-
 ---
 
-##  Sumário
+## Sumário
 
 - [Sobre o Projeto](#sobre-o-projeto)
 - [Funcionalidades](#funcionalidades)
@@ -133,13 +133,13 @@ banco/
 │   └── validacao.h           # Interface de validação e input
 │
 └── src/                      # Implementações
-    ├── main.c                # Entry point (23 linhas)
-    ├── db.c                  # Data Access Layer (133 linhas)
-    ├── menu.c                # Controller + UI (220 linhas)
-    └── validacao.c           # Input seguro (70 linhas)
+    ├── main.c                # Entry point
+    ├── db.c                  # Data Access Layer
+    ├── menu.c                # Controller + UI
+    └── validacao.c           # Input seguro
 ```
 
-> **Nota:** `contas.dat` (arquivo de dados gerado em runtime) e `build/` (objetos compilados) **não fazem parte do repositório** — estão no `.gitignore`.
+> **Nota:** `contas.dat` (arquivo de dados gerado em runtime) e `build/` (objetos compilados) estão no `.gitignore`, mas `banco/contas.dat` e `banco/sistema.exe` foram adicionados antes dele e continuam versionados.
 
 ---
 
@@ -212,7 +212,7 @@ A função pública é apenas uma: `menu_executar()`. O `main.c` não precisa sa
 
 ### `main.c` — Entry Point
 
-Com apenas 23 linhas, responsabilidade única: exibir o banner inicial e chamar `menu_executar()`. Nenhuma lógica de negócio.
+Com poucas linhas e responsabilidade única: exibir o banner inicial e chamar `menu_executar()`. Nenhuma lógica de negócio.
 
 ---
 
@@ -280,8 +280,8 @@ Regra fundamental: **nenhuma dependência circular**. `db.c` não conhece `menu.
 ### Comandos
 
 ```bash
-# Clonar / entrar na pasta
-cd banco
+git clone https://github.com/Luisr-nunes/Sistema-de-Contas-Bancarias.git
+cd Sistema-de-Contas-Bancarias/banco
 
 # Compilar
 make
@@ -299,6 +299,8 @@ make rebuild
 O executável é gerado em `build/banco` (ou `build/banco.exe` no Windows).
 
 ### `.gitignore` recomendado
+
+Conteúdo do `.gitignore` do projeto:
 
 ```
 build/
@@ -326,3 +328,6 @@ O padrão Iterator com callback desacopla *o que buscar* (responsabilidade de `d
 ---
 
 > Desenvolvido como projeto acadêmico para a disciplina de Programação Imperativa e Funcional — CESAR School, Recife/PE.
+## Autor
+
+Luís Nunes — [GitHub](https://github.com/Luisr-nunes) · [LinkedIn](https://www.linkedin.com/in/luis-nunes-dev/)
